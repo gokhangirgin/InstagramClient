@@ -83,10 +83,10 @@ namespace DotNetOpenAuth.AspNet.Clients
                 //http://instagram.com/developer/authentication/
                 dynamic obj = JsonConvert.DeserializeObject<dynamic>(sr.ReadToEnd());
                 userData.Add("access_token", Convert.ToString(obj.access_token));
-                userData.Add("id", Convert.ToString(obj.user[0].id));
-                userData.Add("username", Convert.ToString(obj.user[0].username));
-                userData.Add("full_name", Convert.ToString(obj.user[0].full_name));
-                userData.Add("profile_picture", Convert.ToString(obj.user[0].profile_picture));
+                userData.Add("id", Convert.ToString(obj.user.id));
+                userData.Add("username", Convert.ToString(obj.user.username));
+                userData.Add("full_name", Convert.ToString(obj.user.full_name));
+                userData.Add("profile_picture", Convert.ToString(obj.user.profile_picture));
             }
             return userData["access_token"];
         }
